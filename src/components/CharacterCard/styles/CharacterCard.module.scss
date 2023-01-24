@@ -1,0 +1,19 @@
+.charactercard{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    filter: brightness(60%);
+    justify-content: center;
+    align-items: center;
+    transition: filter 0.5s ease-in-out;
+    .titleCard{
+        font-size: 4rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    &:hover{
+        filter: brightness(100%);
+    }
+}

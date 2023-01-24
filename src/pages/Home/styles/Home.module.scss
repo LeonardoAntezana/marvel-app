@@ -1,0 +1,11 @@
+.home{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    .container__characters{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+        gap: 5rem;
+        grid-auto-rows: 28rem;
+    }
+}
