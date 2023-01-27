@@ -27,7 +27,11 @@ const Home = () => {
   }
   return (
     <div className={styles.home}>
-      <input type="text"/>
+      <input className={styles.search} type="text" placeholder='Search'/>
+      <div className={styles.container__pagination}>
+        <Button onClick={prevPage}>Prev</Button>
+        <Button onClick={nextPage}>Next</Button>
+      </div>
       <div className={styles.container__characters}>
         {characters.map(item => <CharacterCard key={item.id} item={item}/>)}
       </div>

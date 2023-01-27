@@ -1,0 +1,13 @@
+.navbar{
+    padding: 4rem 0;
+    text-align: center;
+    a{
+        font-size: 4rem;
+        text-transform: uppercase;
+        color: black;
+        transition: color 0.3s ease-in-out;
+        &:hover{
+            color:#fff;
+        }
+    }
+}

@@ -1,10 +1,17 @@
 .home{
-    width: 90%;
-    max-width: 1200px;
-    margin: 4rem auto;
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    padding-bottom: 4rem;
+    .search{
+        font-size: 2rem;
+        width: 15rem;
+        padding: 1rem;
+        transition: width 0.4s ease-in-out;
+        &:focus{ 
+            width: 25rem;
+        }
+    }
     .container__characters{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));

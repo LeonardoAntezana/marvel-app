@@ -1,7 +1,7 @@
 .button{
     padding: 2rem 4rem;
     color: white;
-    background-color: rgb(141, 10, 10);
+    background-color: black;
 }
 
 @media screen and (min-width: 900px) {
@@ -9,7 +9,7 @@
         cursor: pointer;
         transition: background-color 0.4s ease-in-out;
         &:hover{
-            background-color: rgb(116, 8, 8);
+            background-color: rgb(26, 23, 23);
         }
     }
 }
