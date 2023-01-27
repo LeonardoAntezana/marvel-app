@@ -11,10 +11,14 @@ const CharacterDetail = ({ character }) => {
         <p className={styles.name}>{name}</p>
         <p className={styles.description}>{description ? description : 'No description for now'}</p>
         <p><span>Appearances in comics:</span> {comics.available}</p>
-        <p><span>Most recents appearances: </span></p>
-        <ul>
-          {comics.items.slice(0,3).map((comic, index) => <li key={index}>{comic.name}</li>)}
-        </ul>
+        {comics.items.length !== 0 && 
+        <>
+          <p><span>Most recents appearances: </span></p>
+          <ul>
+            {comics.items.slice(0,3).map((comic, index) => <li key={index}>{comic.name}</li>)}
+          </ul>
+        </>
+        }
       </div>
     </div>
 	)
