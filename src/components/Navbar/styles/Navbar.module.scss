@@ -4,10 +4,15 @@
     .link__home{
         font-size: 4rem;
         text-transform: uppercase;
-        color: black;
-        transition: color 0.3s ease-in-out;
-        &:hover{
-            color:#fff;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .navbar{
+        .link__home:hover{
+            color: red;
         }
     }
 }
