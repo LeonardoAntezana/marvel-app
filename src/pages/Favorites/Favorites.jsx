@@ -6,7 +6,9 @@ const Favorites = () => {
   const stateFavorites = useSelector((state) => state.favorites)
 	return (
 		<div className={styles.favorites}>
-			{stateFavorites.length === 0 ? <p>No hay favoritos disponibles</p> : stateFavorites.map(elem => <CharacterCard key={elem.id} item={elem}/>)}
+			{stateFavorites.length === 0 
+			? <p>No hay favoritos disponibles</p> 
+			: <div className={styles.container__favorites}>{stateFavorites.map(elem => <CharacterCard key={elem.id} item={elem}/>)}</div>}
 		</div >
 )};
 

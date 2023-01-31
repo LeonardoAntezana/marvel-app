@@ -1,11 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getLocalStorage, setLocalStorage } from "../../utilities/getAxios";
 
 export const favoritesSlice = createSlice({
     name: 'favorites',
-    initialState: [],
+    initialState: getLocalStorage('favorites') ? JSON.parse(getLocalStorage('favorites')): [],
     reducers:{
-        addFavorite: (state, action) => [...state, action.payload],
-        deleteFavorite: (state, action) => state.filter(elem => elem.id !== action.payload),
+        addFavorite: (state, action) => {
+            setLocalStorage('favorites', [...state, action.payload]);
+            return [...state, action.payload]
+        },
+        deleteFavorite: (state, action) => {
+            const listFilter = state.filter(elem => elem.id !== action.payload)
+            setLocalStorage('favorites', listFilter);
+            return listFilter
+        },
     }
 })
 

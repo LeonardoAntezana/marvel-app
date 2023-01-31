@@ -12,7 +12,7 @@ const Home = () => {
   const [navigation, setNavigation] = useState(0)
   const [valueSearch, setValueSearch] = useState('')
   const BASE_URL =  `http://gateway.marvel.com/v1/public/characters?${valueSearch ? `nameStartsWith=${valueSearch}&`: ''}limit=20&offset=${navigation}&ts=1&apikey=4442ef4e3aae679fff0e2f6e19e96be8&hash=32bfa31ec597ede355ace93746fefec1`
-  const {data: characters, setAxiosData} = useCallApi(BASE_URL)
+  const {data: characters, isPending, setAxiosData} = useCallApi(BASE_URL)
 
   const nextPage = () => { 
     if(characters.length === 20){
@@ -29,16 +29,19 @@ const Home = () => {
     }
   } 
 
-  if(characters.length === 0){
+  if(isPending){
     return <Loader/>
   }
   return (
     <div className={styles.home}>
       <Link className={styles.link__favorites} to='/favorites'><BsFillStarFill size={40}/></Link>
       <div className={styles.container__search}>
-        <input className={styles.search} value={valueSearch} onChange={(e) => setValueSearch(e.target.value)} type="text" placeholder='Search'/>
+        <input className={styles.search} value={valueSearch} onChange={(e) => setValueSearch(e.target.value)} type="text" placeholder='Search' autoFocus/>
         {valueSearch && <BiSearchAlt2 size={25} cursor='pointer'/>}
       </div>
+      {characters.length === 0 ? <p className={styles.noCharacters}>No se encuentran personajes</p>
+      :
+      <>
       <div className={styles.container__pagination}>
         <Button onClick={prevPage}>Prev</Button>
         <Button onClick={nextPage}>Next</Button>
@@ -50,6 +53,7 @@ const Home = () => {
         <Button onClick={prevPage}>Prev</Button>
         <Button onClick={nextPage}>Next</Button>
       </div>
+      </>}
     </div>
 )};
 

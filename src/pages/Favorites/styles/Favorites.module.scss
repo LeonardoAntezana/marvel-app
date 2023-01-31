@@ -1,3 +1,15 @@
 .favorites{
-
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 2rem;
+    }
+    .container__favorites{
+        display: grid;
+        grid-template-columns: minmax(350px, 65rem);
+        grid-auto-rows: 15rem;
+        gap: 2rem;
+    }
 }
