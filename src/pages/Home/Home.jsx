@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const [navigation, setNavigation] = useState(0)
   const [valueSearch, setValueSearch] = useState('')
-  const BASE_URL =  `http://gateway.marvel.com/v1/public/characters?${valueSearch ? `nameStartsWith=${valueSearch}&`: ''}limit=20&offset=${navigation}&ts=1&apikey=4442ef4e3aae679fff0e2f6e19e96be8&hash=32bfa31ec597ede355ace93746fefec1`
+  const BASE_URL =  `https://gateway.marvel.com/v1/public/characters?${valueSearch ? `nameStartsWith=${valueSearch}&`: ''}limit=20&offset=${navigation}&ts=1&apikey=4442ef4e3aae679fff0e2f6e19e96be8&hash=32bfa31ec597ede355ace93746fefec1`
   const {data: characters, isPending, setAxiosData} = useCallApi(BASE_URL)
 
   const nextPage = () => { 
