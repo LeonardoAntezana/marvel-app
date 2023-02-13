@@ -1,7 +1,21 @@
 .noCharacters{
-    font-size: 3rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    color: #fff;
     margin: 5rem 0;
+    &__p{
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+    button{
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 2rem 3rem;
+        background-color: rgb(255,255,255, 0.5);
+        cursor: pointer;
+    }
 }
 .home{
     display: flex;
@@ -31,7 +45,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
         gap: 5rem;
-        grid-auto-rows: 28rem;
+        grid-auto-rows: 32rem;
     }
 
     .container__pagination{
