@@ -20,15 +20,6 @@ export const useCallApi = param => {
       getData()
     },[param])
 
-    const setAxiosData = async ( url ) => {
-        try{
-          let res = await axios(url)
-          setData(res.data.data.results)
-        }
-        catch{
-        }
-      }
-
-    return {data, isPending, setAxiosData}
+    return {data, isPending}
   }
   
